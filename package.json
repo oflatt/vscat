@@ -1,7 +1,7 @@
 {
     "name": "vscat2",
     "publisher": "oflatt",
-    "displayName": "vsCat",
+    "displayName": "Visual Studio Cat",
     "description": "This extension increases your productivity by over 200% by playing meow sounds while you code.",
     "version": "1.4.4",
     "engines": {
