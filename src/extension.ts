@@ -299,8 +299,14 @@ export class EditorListener {
                         break;
 
                     case 1:
+                        const keyCode = pressedKey.toUpperCase().charCodeAt(0);
+                        var index = ((keyCode - 'A'.charCodeAt(0)) % 12)-5;
+                        if (/[A-Z]/.test(pressedKey)) {
+                            index += 12;
+                        }
+                        var file = path.join(this._basePath, 'audio', 'cat', 'cat_' + index.toString() + '.wav')
                         // it's a regular character
-                        this.player.play(this._otherKeysAudio);
+                        this.player.play(file);
                         break;
 
                     default:
