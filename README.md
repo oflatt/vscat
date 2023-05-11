@@ -1,11 +1,11 @@
 # vscat
 
-[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/mattogodoy.hacker-sounds.svg)](https://marketplace.visualstudio.com/items?itemName=mattogodoy.hacker-sounds)
-[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/mattogodoy.hacker-sounds.svg)](https://marketplace.visualstudio.com/items?itemName=mattogodoy.hacker-sounds)
-[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/r/mattogodoy.hacker-sounds.svg)](https://marketplace.visualstudio.com/items?itemName=mattogodoy.hacker-sounds)
+[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/oflatt.vscat.svg)](https://marketplace.visualstudio.com/items?itemName=oflatt.vscat)
+[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/oflatt.vscat.svg)](https://marketplace.visualstudio.com/items?itemName=oflatt.vscat)
+[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/r/oflatt.vscat.svg)](https://marketplace.visualstudio.com/items?itemName=oflatt.vscat)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/jengjeng/aural-coding-vscode/blob/master/LICENSE)
 
-This Visual Studio Code extension automatically turns you into a very skilled hacker by playing movie-like sounds while you write code.
+This Visual Studio Code extension increases your productivity by 200% by playing meow sounds when you type.
 
 ## Requirements
 
@@ -37,26 +37,26 @@ No special requirements.
 
 ## Installation
 
-Run `code --install-extension mattogodoy.hacker-sounds`
+Run `code --install-extension oflatt.vscat`
 
-or search [Hacker Sounds](https://marketplace.visualstudio.com/items?itemName=mattogodoy.hacker-sounds) in Extensions Marketplace.
+or search [vsCat](https://marketplace.visualstudio.com/items?itemName=oflatt.vscat) in Extensions Marketplace.
 
 ## How to use
 
 ### Enable / Disable
 
-Hacker Sounds will start immediately when Visual Studio Code is started. However, you can enable and disable the extension by executing these commands in the Command Palette (Cmd+Shift+P):
+vsCat will start immediately when Visual Studio Code is started. However, you can enable and disable the extension by executing these commands in the Command Palette (Cmd+Shift+P):
 
-- `Hacker Sounds: Enable`
-- `Hacker Sounds: Disable`
+- `vsCat: Enable`
+- `vsCat: Disable`
 
 ### Volume control
 
 You can adjust the volume of the sounds by executing these commands in the Command Palette (Cmd+Shift+P):
 
-- `Hacker Sounds: Volume Up`
-- `Hacker Sounds: Volume Down`
-- `Hacker Sounds: Set Volume`
+- `vsCat: Volume Up`
+- `vsCat: Volume Down`
+- `vsCat: Set Volume`
 
 **NOTE:** The volume adjustments only apply to this extension's sounds. It does not affect the system volume.
 
@@ -69,6 +69,10 @@ The extension is in a very early stage. Please report any issues / bugs you find
 Any pull request is welcome.
 
 ## Release Notes
+
+### 1.4.4
+
+Thanks mattogodoy for the original extension. oflatt has turned your project into vscat.
 
 ### 1.4.3
 
@@ -85,7 +89,7 @@ Any pull request is welcome.
 
 ### 1.4.0
 
-- Now you can type the volume level directly using the `Hacker Sounds: Set Volume` command.
+- Now you can type the volume level directly using the `vsCat: Set Volume` command.
   - Thanks, [Onur Yüksel](https://github.com/Onuryukselce)!
 
 ### 1.3.0
