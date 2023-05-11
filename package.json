@@ -31,6 +31,10 @@
     "contributes": {
         "commands": [
             {
+                "command": "hacker_sounds.catMode",
+                "title": "Hacker Sounds: Cat Mode"
+            },
+            {
                 "command": "hacker_sounds.enable",
                 "title": "Hacker Sounds: Enable"
             },

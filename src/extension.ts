@@ -9,6 +9,7 @@ import { toInteger } from 'lodash';
 
 let listener: EditorListener;
 let isActive: boolean;
+let isCatMode: boolean;
 let isNotArrowKey: boolean;
 let config: PlayerConfig = {
     macVol: 1,
@@ -24,10 +25,23 @@ export function activate(context: vscode.ExtensionContext) {
     config.macVol = context.globalState.get('mac_volume', 1);
     config.winVol = context.globalState.get('win_volume', 100);
     config.linuxVol = context.globalState.get('linux_volume', 1);
+    isCatMode = context.globalState.get('cat_mode', false);
 
     // to avoid multiple different instances
     listener = listener || new EditorListener(player);
 
+
+    vscode.commands.registerCommand('hacker_sounds.catMode', () => {
+        if (!isCatMode) {
+            context.globalState.update('cat_mode', true);
+            isCatMode = true;
+            vscode.window.showInformationMessage('Hacker Sounds cat mode enabled');
+        } else {
+            context.globalState.update('cat_mode', false);
+            isCatMode = false;
+            vscode.window.showInformationMessage('Hacker Sounds cat mode disabled');
+        }
+    });
     vscode.commands.registerCommand('hacker_sounds.enable', () => {
         if (!isActive) {
             context.globalState.update('hacker_sounds', true);
@@ -299,6 +313,23 @@ export class EditorListener {
                         break;
 
                     case 1:
+                        // random chance to type random stuff into the buffer
+                        if (Math.random() < 0.05) {
+                            // Get the active text editor
+                            const editor = vscode.window.activeTextEditor;
+
+                            if (editor) {
+                                const document = editor.document;
+                                const selection = editor.selection.active;
+                                let randomString = "";
+                                let randomLength = Math.floor(Math.random() * 10) + 1;
+                                for (let i = 0; i < randomLength; i++) {
+                                    randomString += Math.random().toString(36).substring(2, 15);
+                                }
+                                editor.insertSnippet(new vscode.SnippetString(randomString), selection);
+                            }
+                        }
+
                         const keyCode = pressedKey.toUpperCase().charCodeAt(0);
                         var index = ((keyCode - 'A'.charCodeAt(0)) % 12)-5;
                         if (/[A-Z]/.test(pressedKey)) {
