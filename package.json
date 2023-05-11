@@ -1,23 +1,24 @@
 {
-    "name": "hacker-sounds",
-    "publisher": "mattogodoy",
-    "displayName": "Hacker Sounds",
-    "description": "This extension automatically turns you into a very skilled hacker by playing movie-like sounds while you write code.",
+    "name": "vscat",
+    "publisher": "oflatt",
+    "displayName": "vsCat",
+    "description": "This extension increases your productivity by over 200% by playing meow sounds while you code.",
     "version": "1.4.3",
     "engines": {
         "vscode": "^1.40.0"
     },
-    "homepage": "https://matto.io",
+    "homepage": "https://oflatt.com",
     "repository": {
         "type": "git",
-        "url": "https://github.com/mattogodoy/hacker-sounds"
+        "url": "https://github.com/oflatt/vscat"
     },
     "keywords": [
         "sound",
         "keyboard",
         "hacker",
-        "fx",
-        "sci-fi"
+        "cat",
+        "meow",
+        "fx"
     ],
     "icon": "icon.png",
     "license": "MIT",
@@ -31,28 +32,28 @@
     "contributes": {
         "commands": [
             {
-                "command": "hacker_sounds.catMode",
-                "title": "Hacker Sounds: Cat Mode"
+                "command": "vscat.catMode",
+                "title": "vsCat: Cat Mode"
             },
             {
-                "command": "hacker_sounds.enable",
-                "title": "Hacker Sounds: Enable"
+                "command": "vscat.enable",
+                "title": "vsCat: Enable"
             },
             {
-                "command": "hacker_sounds.disable",
-                "title": "Hacker Sounds: Disable"
+                "command": "vscat.disable",
+                "title": "vsCat: Disable"
             },
             {
-                "command": "hacker_sounds.volumeUp",
-                "title": "Hacker Sounds: Volume Up"
+                "command": "vscat.volumeUp",
+                "title": "vsCat: Volume Up"
             },
             {
-                "command": "hacker_sounds.volumeDown",
-                "title": "Hacker Sounds: Volume Down"
+                "command": "vscat.volumeDown",
+                "title": "vsCat: Volume Down"
             },
             {
-                "command": "hacker_sounds.setVolume",
-                "title": "Hacker Sounds: Set Volume",
+                "command": "vscat.setVolume",
+                "title": "vsCat: Set Volume",
                 "args": "newVol"
             }
         ]

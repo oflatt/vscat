@@ -18,10 +18,10 @@ let config: PlayerConfig = {
 };
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Initializing "hacker-sounds" extension');
+    console.log('Initializing "vscat" extension');
 
     // is the extension activated? yes by default.
-    isActive = context.globalState.get('hacker_sounds', true);
+    isActive = context.globalState.get('vscat', true);
     config.macVol = context.globalState.get('mac_volume', 1);
     config.winVol = context.globalState.get('win_volume', 100);
     config.linuxVol = context.globalState.get('linux_volume', 1);
@@ -31,43 +31,43 @@ export function activate(context: vscode.ExtensionContext) {
     listener = listener || new EditorListener(player);
 
 
-    vscode.commands.registerCommand('hacker_sounds.catMode', () => {
+    vscode.commands.registerCommand('vscat.catMode', () => {
         if (!isCatMode) {
             context.globalState.update('cat_mode', true);
             isCatMode = true;
-            vscode.window.showInformationMessage('Hacker Sounds cat mode enabled');
+            vscode.window.showInformationMessage('vsCat cat mode enabled');
         } else {
             context.globalState.update('cat_mode', false);
             isCatMode = false;
-            vscode.window.showInformationMessage('Hacker Sounds cat mode disabled');
+            vscode.window.showInformationMessage('vsCat cat mode disabled');
         }
     });
-    vscode.commands.registerCommand('hacker_sounds.enable', () => {
+    vscode.commands.registerCommand('vscat.enable', () => {
         if (!isActive) {
-            context.globalState.update('hacker_sounds', true);
+            context.globalState.update('vscat', true);
             isActive = true;
-            vscode.window.showInformationMessage('Hacker Sounds extension enabled');
+            vscode.window.showInformationMessage('vsCat extension enabled');
         } else {
-            vscode.window.showWarningMessage('Hacker Sounds extension is already enabled');
+            vscode.window.showWarningMessage('vsCat extension is already enabled');
         }
     });
-    vscode.commands.registerCommand('hacker_sounds.disable', () => {
+    vscode.commands.registerCommand('vscat.disable', () => {
         if (isActive) {
-            context.globalState.update('hacker_sounds', false);
+            context.globalState.update('vscat', false);
             isActive = false;
-            vscode.window.showInformationMessage('Hacker Sounds extension disabled');
+            vscode.window.showInformationMessage('vsCat extension disabled');
         } else {
-            vscode.window.showWarningMessage('Hacker Sounds extension is already disabled');
+            vscode.window.showWarningMessage('vsCat extension is already disabled');
         }
     });
-    vscode.commands.registerCommand('hacker_sounds.volumeUp', () => {
+    vscode.commands.registerCommand('vscat.volumeUp', () => {
         let newVol = null;
         switch (process.platform) {
             case 'darwin':
                 config.macVol += 1;
 
                 if (config.macVol > 10) {
-                    vscode.window.showWarningMessage('Hacker Sounds already at maximum volume');
+                    vscode.window.showWarningMessage('vsCat already at maximum volume');
                     config.macVol = 10;
                 }
 
@@ -79,7 +79,7 @@ export function activate(context: vscode.ExtensionContext) {
                 config.winVol += 10;
 
                 if (config.winVol > 100) {
-                    vscode.window.showWarningMessage('Hacker Sounds already at maximum volume');
+                    vscode.window.showWarningMessage('vsCat already at maximum volume');
                     config.winVol = 100;
                 }
 
@@ -91,7 +91,7 @@ export function activate(context: vscode.ExtensionContext) {
                 config.linuxVol += 1;
 
                 if (config.linuxVol > 10) {
-                    vscode.window.showWarningMessage('Hacker Sounds already at maximum volume');
+                    vscode.window.showWarningMessage('vsCat already at maximum volume');
                     config.linuxVol = 10;
                 }
 
@@ -104,9 +104,9 @@ export function activate(context: vscode.ExtensionContext) {
                 break;
         }
 
-        vscode.window.showInformationMessage('Hacker Sounds volume raised: ' + newVol);
+        vscode.window.showInformationMessage('vsCat volume raised: ' + newVol);
     });
-    vscode.commands.registerCommand('hacker_sounds.volumeDown', () => {
+    vscode.commands.registerCommand('vscat.volumeDown', () => {
         let newVol = null;
 
         switch (process.platform) {
@@ -114,7 +114,7 @@ export function activate(context: vscode.ExtensionContext) {
                 config.macVol -= 1;
 
                 if (config.macVol < 1) {
-                    vscode.window.showWarningMessage('Hacker Sounds already at minimum volume');
+                    vscode.window.showWarningMessage('vsCat already at minimum volume');
                     config.macVol = 1;
                 }
 
@@ -126,7 +126,7 @@ export function activate(context: vscode.ExtensionContext) {
                 config.winVol -= 10;
 
                 if (config.winVol < 10) {
-                    vscode.window.showWarningMessage('Hacker Sounds already at minimum volume');
+                    vscode.window.showWarningMessage('vsCat already at minimum volume');
                     config.winVol = 10;
                 }
 
@@ -138,7 +138,7 @@ export function activate(context: vscode.ExtensionContext) {
                 config.linuxVol -= 1;
 
                 if (config.linuxVol < 1) {
-                    vscode.window.showWarningMessage('Hacker Sounds already at minimum volume');
+                    vscode.window.showWarningMessage('vsCat already at minimum volume');
                     config.linuxVol = 1;
                 }
 
@@ -151,10 +151,10 @@ export function activate(context: vscode.ExtensionContext) {
                 break;
         }
 
-        vscode.window.showInformationMessage('Hacker Sounds volume lowered: ' + newVol);
+        vscode.window.showInformationMessage('vsCat volume lowered: ' + newVol);
     });
 
-    vscode.commands.registerCommand('hacker_sounds.setVolume', async () => {
+    vscode.commands.registerCommand('vscat.setVolume', async () => {
         let input = await vscode.window.showInputBox()
         let newVol = toInteger(input);
 

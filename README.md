@@ -1,4 +1,4 @@
-# hacker-sounds
+# vscat
 
 [![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/mattogodoy.hacker-sounds.svg)](https://marketplace.visualstudio.com/items?itemName=mattogodoy.hacker-sounds)
 [![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/d/mattogodoy.hacker-sounds.svg)](https://marketplace.visualstudio.com/items?itemName=mattogodoy.hacker-sounds)
